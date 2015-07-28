@@ -1,0 +1,11 @@
+- include: install.yml
+  tags:
+    - mongodb
+    - mongodb-install
+
+- include: configure.yml
+  tags:
+    - mongodb
+    - mongodb-configure
+
+- meta: flush_handlers

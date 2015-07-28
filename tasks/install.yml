@@ -1,0 +1,19 @@
+- name: add apt key
+  apt_key:
+    id: 7F0CEB10
+    keyserver: hkp://keyserver.ubuntu.com:80
+
+- name: add apt repository
+  apt_repository:
+    repo: deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen
+    update_cache: yes
+
+- name: install mongodb
+  apt:
+    pkg: mongodb-org
+    state: present
+
+- name: install python mongodb client
+  apt:
+    pkg: python-pymongo
+    state: present

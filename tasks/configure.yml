@@ -1,0 +1,6 @@
+- name: configure mongod
+  template:
+    src: mongod.conf.j2
+    dest: /etc/mongod.conf
+  notify:
+    - restart mongod
